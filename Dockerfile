@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
       intl \
       mbstring \
       mcrypt \
+      mysqli \
       pcntl \
       pdo_mysql \
       pdo_pgsql \
