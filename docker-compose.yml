@@ -14,5 +14,8 @@ mysql:
   image: mysql:5.6.23
   ports:
       - "3306:3306"
-    env_file:
+  # Add a persistent drive to have the mysql DB locally and not only in the container
+  volumes:
+      - ./build/mysql/data:/var/lib/mysql
+  env_file:
     - build/env
