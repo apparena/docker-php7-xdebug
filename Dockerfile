@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
       libmcrypt-dev \
       mysql-client \
       libmysqlclient-dev \
+      ruby-full \
     && rm -r /var/lib/apt/lists/* \
     && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
     && docker-php-ext-install \
@@ -19,7 +20,10 @@ RUN apt-get update && apt-get install -y \
       pdo_pgsql \
       pgsql \
       zip \
-      opcache
+      opcache \
+    && curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - \
+    && sudo apt-get install -y nodejs \
+    && su -c "gem install sass"
 
 # Install Xdebug
 RUN curl -fsSL 'https://xdebug.org/files/xdebug-2.4.0.tgz' -o xdebug.tar.gz \
