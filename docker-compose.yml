@@ -2,6 +2,7 @@ web:
   image: apparena/php7-xdebug
   ports:
     - "80:80"
+    - "9000:9000"
   links:
     - mysql
   volumes:
