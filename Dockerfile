@@ -53,3 +53,5 @@ RUN a2dissite 000-default.conf && a2ensite custom-vhost.conf && a2enmod rewrite
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 
 WORKDIR /var/www/html
+
+EXPOSE 9000
